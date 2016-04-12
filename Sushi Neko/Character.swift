@@ -15,7 +15,7 @@ class Character: SKSpriteNode {
         didSet {
             
             /* Load our punch action */
-            let punch:SKAction = SKAction (named: "Punch")!
+            let punch = SKAction(named: "Punch")!
             
             if side == .Left {
                 xScale = 1
@@ -30,7 +30,7 @@ class Character: SKSpriteNode {
             runAction(punch)
         }
     }
-
+    
     /* You need to impplement this for your subclass to work */
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)

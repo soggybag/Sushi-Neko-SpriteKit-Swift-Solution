@@ -67,7 +67,7 @@ class SushiPiece: SKSpriteNode {
         }
         
         /* Load appropriate action */
-        let flip = SKAction (named: actionName)!
+        let flip = SKAction(named: actionName)!
         
         /* Create a node removal action */
         let remove = SKAction.removeFromParent()
