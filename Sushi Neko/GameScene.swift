@@ -23,8 +23,8 @@ class GameScene: SKScene {
     /* Game objects */
     var character: Character!
     var sushiBasePiece: SushiPiece!
-    var healthBar: SKSpriteNode!
     var playButton: MSButtonNode!
+    var healthBar: SKSpriteNode!
     var scoreLabel: SKLabelNode!
     
     /* Sushi tower array */
@@ -32,12 +32,6 @@ class GameScene: SKScene {
     
     /* Game management */
     var state: GameState = .Title
-    
-    var score: Int = 0 {
-        didSet {
-            scoreLabel.text = String(score)
-        }
-    }
     
     var health: CGFloat = 1.0 {
         didSet {
@@ -49,16 +43,22 @@ class GameScene: SKScene {
         }
     }
     
+    var score: Int = 0 {
+        didSet {
+            scoreLabel.text = String(score)
+        }
+    }
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
-        /* Connect core game objects */
+        /* Connect game objects */
         character = childNodeWithName("character") as! Character
         sushiBasePiece = childNodeWithName("sushiBasePiece") as! SushiPiece
         
         /* UI game objects */
-        healthBar = childNodeWithName("healthBar") as! SKSpriteNode
         playButton = childNodeWithName("playButton") as! MSButtonNode
+        healthBar = childNodeWithName("healthBar") as! SKSpriteNode
         scoreLabel = childNodeWithName("scoreLabel") as! SKLabelNode
         
         /* Setup play button selection handler */
@@ -68,7 +68,7 @@ class GameScene: SKScene {
             self.state = .Ready
         }
         
-        /* Initial sushi chopstick setup */
+        /* Setup chopstick connections */
         sushiBasePiece.connectChopsticks()
         
         /* Manually stack the start of the tower */
@@ -82,7 +82,7 @@ class GameScene: SKScene {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
         
-        /* No main game */
+        /* Game not ready to play */
         if state == .GameOver || state == .Title { return }
         
         /* Game begins on first touch */
@@ -91,9 +91,11 @@ class GameScene: SKScene {
         }
         
         for touch in touches {
+            
+            /* Get touch position in scene */
             let location = touch.locationInNode(self)
             
-            /* Was touch on right hand side of screen? */
+            /* Was touch on left/right hand side of screen? */
             if location.x > size.width / 2 {
                 character.side = .Right
             } else {
@@ -105,25 +107,31 @@ class GameScene: SKScene {
             
             /* Check character side against sushi piece side (this is our death collision check)*/
             if character.side == firstPiece.side {
+                
                 /* Drop all the sushi pieces down a place (visually) */
                 for node:SushiPiece in sushiTower {
                     node.runAction(SKAction.moveBy(CGVector(dx: 0, dy: -55), duration: 0.10))
                 }
+                
                 gameOver()
+                
+                /* No need to continue as player dead */
                 return
             }
             
-            /* Increment Score / Health */
-            score  += 1
+            /* Increment Health */
             health += 0.1
             
-            /* Animate the punched sushi piece */
-            firstPiece.flip(character.side)
+            /* Increment Score */
+            score += 1
             
             /* Remove from sushi tower array */
             sushiTower.removeFirst()
             
-            /* Add a new sushi piece to the top of the sushi tower*/
+            /* Animate the punched sushi piece */
+            firstPiece.flip(character.side)
+            
+            /* Add a new sushi piece to the top of the sushi tower */
             addRandomPieces(1)
             
             /* Drop all the sushi pieces down one place */
@@ -179,7 +187,7 @@ class GameScene: SKScene {
                 
                 /* Random Number Generator */
                 let rand = CGFloat.random(min: 0, max: 1.0)
-            
+                
                 if rand < 0.45 {
                     /* 45% Chance of a left piece */
                     addTowerPiece(.Left)
@@ -199,7 +207,7 @@ class GameScene: SKScene {
         
         state = .GameOver
         
-        /* Drop all the sushi pieces red*/
+        /* Turn all the sushi pieces red*/
         for node:SushiPiece in sushiTower {
             node.runAction(SKAction.colorizeWithColor(UIColor.redColor(), colorBlendFactor: 1.0, duration: 0.50))
         }
@@ -219,7 +227,7 @@ class GameScene: SKScene {
             /* Ensure correct aspect mode */
             scene.scaleMode = .AspectFill
             
-            /* Restart game scene */
+            /* Restart GameScene */
             skView.presentScene(scene)
         }
     }

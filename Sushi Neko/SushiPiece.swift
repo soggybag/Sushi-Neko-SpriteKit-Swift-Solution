@@ -10,7 +10,7 @@ import SpriteKit
 
 class SushiPiece: SKSpriteNode {
     
-    /* Sushi chopstick side */
+    /* Sushi type */
     var side: Side = .None {
         
         didSet {
@@ -30,17 +30,16 @@ class SushiPiece: SKSpriteNode {
         }
     }
     
-    
-    /* Chopsticks */
+    /* Chopstick objects */
     var rightChopstick: SKSpriteNode!
     var leftChopstick: SKSpriteNode!
     
-    /* You need to impplement this for your subclass to work */
+    /* You are required to implement this for your subclass to work */
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
     }
     
-    /* You need to impplement this for your subclass to work */
+    /* You are required to implement this for your subclass to work */
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -51,7 +50,7 @@ class SushiPiece: SKSpriteNode {
         rightChopstick = childNodeWithName("rightChopstick") as! SKSpriteNode
         leftChopstick = childNodeWithName("leftChopstick") as! SKSpriteNode
         
-        /* Hide the chopsticks by default */
+        /* Set the default side */
         side = .None
     }
     
