@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B28FAE81CDA0C610041A87E /* sfx_swipe.caf in Resources */ = {isa = PBXBuildFile; fileRef = 5B28FAE71CDA0C610041A87E /* sfx_swipe.caf */; };
 		5B7DA06A1CB6C42A00069506 /* SushiPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DA0691CB6C42A00069506 /* SushiPiece.swift */; };
 		5BC666B71CB40206000C3C09 /* assets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5BC666B61CB40206000C3C09 /* assets.atlas */; };
 		5BCDD4711CB3F10700CDA37E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCDD4701CB3F10700CDA37E /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B28FAE71CDA0C610041A87E /* sfx_swipe.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_swipe.caf; sourceTree = "<group>"; };
 		5B7DA0691CB6C42A00069506 /* SushiPiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SushiPiece.swift; sourceTree = "<group>"; };
 		5BC666B61CB40206000C3C09 /* assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = assets.atlas; sourceTree = "<group>"; };
 		5BCDD46D1CB3F10700CDA37E /* SushiNeko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SushiNeko.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,6 +116,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B28FAE61CDA0C610041A87E /* SFX */ = {
+			isa = PBXGroup;
+			children = (
+				5B28FAE71CDA0C610041A87E /* sfx_swipe.caf */,
+			);
+			path = SFX;
+			sourceTree = "<group>";
+		};
 		5BCDD4641CB3F10700CDA37E = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +154,7 @@
 				5BCDD4741CB3F10700CDA37E /* GameScene.swift */,
 				5BCDD4761CB3F10700CDA37E /* GameViewController.swift */,
 				5BCDD4781CB3F10700CDA37E /* Main.storyboard */,
+				5B28FAE61CDA0C610041A87E /* SFX */,
 				5BCDD47B1CB3F10700CDA37E /* Assets.xcassets */,
 				5BCDD47D1CB3F10700CDA37E /* LaunchScreen.storyboard */,
 				5BCDD4801CB3F10700CDA37E /* Info.plist */,
@@ -313,6 +324,7 @@
 				5BCDD47F1CB3F10700CDA37E /* LaunchScreen.storyboard in Resources */,
 				5BCDD47C1CB3F10700CDA37E /* Assets.xcassets in Resources */,
 				5BC666B71CB40206000C3C09 /* assets.atlas in Resources */,
+				5B28FAE81CDA0C610041A87E /* sfx_swipe.caf in Resources */,
 				5BCDD47A1CB3F10700CDA37E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
