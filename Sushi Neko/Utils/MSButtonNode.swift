@@ -27,6 +27,7 @@ class MSButtonNode: SKSpriteNode {
                 
                 /* Visible */
                 self.alpha = 1
+                self.hidden = false
                 break
             case .MSButtonNodeStateSelected:
                 /* Semi transparent */
@@ -37,7 +38,7 @@ class MSButtonNode: SKSpriteNode {
                 self.userInteractionEnabled = false
                 
                 /* Hide */
-                self.alpha = 0
+                self.hidden = true
                 break
             }
         }
@@ -60,7 +61,10 @@ class MSButtonNode: SKSpriteNode {
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         selectedHandler()
-        state = .MSButtonNodeStateActive
+        
+        if state == .MSButtonNodeStateSelected {
+            state = .MSButtonNodeStateActive
+        }
     }
     
 }

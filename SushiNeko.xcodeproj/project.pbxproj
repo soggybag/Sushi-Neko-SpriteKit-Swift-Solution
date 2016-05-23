@@ -35,6 +35,9 @@
 		5BED6D3C1CBBE2A9004E758D /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D2E1CBBE2A9004E758D /* SKTEffects.swift */; };
 		5BED6D3D1CBBE2A9004E758D /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D2F1CBBE2A9004E758D /* SKTTimingFunctions.swift */; };
 		5BED6D3E1CBBE2A9004E758D /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D301CBBE2A9004E758D /* Vector3.swift */; };
+		74B5BF739BC426D575E1CF4B /* Pods_SushiNekoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B9525976042304E9E056CBC /* Pods_SushiNekoUITests.framework */; };
+		8B543C85D87CA1EDD4393B83 /* Pods_SushiNeko.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC142846FFDB3041587F9E0 /* Pods_SushiNeko.framework */; };
+		BD34A8580A48067AE2A05AA4 /* Pods_SushiNekoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5076B4564625C50687D82F07 /* Pods_SushiNekoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +58,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12BF2AF28DEB8FA1513A6826 /* Pods-SushiNekoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SushiNekoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SushiNekoTests/Pods-SushiNekoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		12DED9EBD98FC4DB5C54E6A9 /* Pods-SushiNekoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SushiNekoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SushiNekoUITests/Pods-SushiNekoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1F60DC30BFA1C587654B31FD /* Pods-SushiNekoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SushiNekoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SushiNekoUITests/Pods-SushiNekoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2AC142846FFDB3041587F9E0 /* Pods_SushiNeko.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SushiNeko.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ACF81373AD5C63CC82E1C38 /* Pods-SushiNeko.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SushiNeko.release.xcconfig"; path = "Pods/Target Support Files/Pods-SushiNeko/Pods-SushiNeko.release.xcconfig"; sourceTree = "<group>"; };
+		5076B4564625C50687D82F07 /* Pods_SushiNekoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SushiNekoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57DED135A623B1B1B5BAD1B8 /* Pods-SushiNekoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SushiNekoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SushiNekoTests/Pods-SushiNekoTests.release.xcconfig"; sourceTree = "<group>"; };
 		5B28FAE71CDA0C610041A87E /* sfx_swipe.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sfx_swipe.caf; sourceTree = "<group>"; };
 		5B7DA0691CB6C42A00069506 /* SushiPiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SushiPiece.swift; sourceTree = "<group>"; };
+		5B9525976042304E9E056CBC /* Pods_SushiNekoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SushiNekoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC666B61CB40206000C3C09 /* assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = assets.atlas; sourceTree = "<group>"; };
 		5BCDD46D1CB3F10700CDA37E /* SushiNeko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SushiNeko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCDD4701CB3F10700CDA37E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +100,7 @@
 		5BED6D2E1CBBE2A9004E758D /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
 		5BED6D2F1CBBE2A9004E758D /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
 		5BED6D301CBBE2A9004E758D /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
+		652DA1568E557D12AA3D1EDC /* Pods-SushiNeko.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SushiNeko.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SushiNeko/Pods-SushiNeko.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B543C85D87CA1EDD4393B83 /* Pods_SushiNeko.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD34A8580A48067AE2A05AA4 /* Pods_SushiNekoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,12 +124,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74B5BF739BC426D575E1CF4B /* Pods_SushiNekoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3360CBE67F256233C0B77749 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2AC142846FFDB3041587F9E0 /* Pods_SushiNeko.framework */,
+				5076B4564625C50687D82F07 /* Pods_SushiNekoTests.framework */,
+				5B9525976042304E9E056CBC /* Pods_SushiNekoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5B28FAE61CDA0C610041A87E /* SFX */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +156,8 @@
 				5BCDD4881CB3F10700CDA37E /* SushiNekoTests */,
 				5BCDD4931CB3F10700CDA37E /* SushiNekoUITests */,
 				5BCDD46E1CB3F10700CDA37E /* Products */,
+				780D55441D877D076E8D016E /* Pods */,
+				3360CBE67F256233C0B77749 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,6 +242,19 @@
 			path = SKTUtils;
 			sourceTree = "<group>";
 		};
+		780D55441D877D076E8D016E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				652DA1568E557D12AA3D1EDC /* Pods-SushiNeko.debug.xcconfig */,
+				3ACF81373AD5C63CC82E1C38 /* Pods-SushiNeko.release.xcconfig */,
+				12BF2AF28DEB8FA1513A6826 /* Pods-SushiNekoTests.debug.xcconfig */,
+				57DED135A623B1B1B5BAD1B8 /* Pods-SushiNekoTests.release.xcconfig */,
+				12DED9EBD98FC4DB5C54E6A9 /* Pods-SushiNekoUITests.debug.xcconfig */,
+				1F60DC30BFA1C587654B31FD /* Pods-SushiNekoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -222,9 +262,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BCDD4991CB3F10700CDA37E /* Build configuration list for PBXNativeTarget "SushiNeko" */;
 			buildPhases = (
+				A09A40A57F425C9663EA763A /* 📦 Check Pods Manifest.lock */,
 				5BCDD4691CB3F10700CDA37E /* Sources */,
 				5BCDD46A1CB3F10700CDA37E /* Frameworks */,
 				5BCDD46B1CB3F10700CDA37E /* Resources */,
+				41432F063807D9E6D3EC8708 /* 📦 Embed Pods Frameworks */,
+				2850F72D2F2C25DAF743579C /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -239,9 +282,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BCDD49C1CB3F10700CDA37E /* Build configuration list for PBXNativeTarget "SushiNekoTests" */;
 			buildPhases = (
+				B9238C752809E4A2E6F5F4FC /* 📦 Check Pods Manifest.lock */,
 				5BCDD4811CB3F10700CDA37E /* Sources */,
 				5BCDD4821CB3F10700CDA37E /* Frameworks */,
 				5BCDD4831CB3F10700CDA37E /* Resources */,
+				200A40FFFF4C35D96F83D099 /* 📦 Embed Pods Frameworks */,
+				BA681B725A86B313C69D03E4 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,9 +303,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BCDD49F1CB3F10700CDA37E /* Build configuration list for PBXNativeTarget "SushiNekoUITests" */;
 			buildPhases = (
+				2B6F331585BB081BCD70D58B /* 📦 Check Pods Manifest.lock */,
 				5BCDD48C1CB3F10700CDA37E /* Sources */,
 				5BCDD48D1CB3F10700CDA37E /* Frameworks */,
 				5BCDD48E1CB3F10700CDA37E /* Resources */,
+				0BC1DAB3DCB0621A55110850 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -344,6 +392,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BC1DAB3DCB0621A55110850 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SushiNekoUITests/Pods-SushiNekoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		200A40FFFF4C35D96F83D099 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SushiNekoTests/Pods-SushiNekoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2850F72D2F2C25DAF743579C /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SushiNeko/Pods-SushiNeko-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B6F331585BB081BCD70D58B /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		41432F063807D9E6D3EC8708 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SushiNeko/Pods-SushiNeko-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A09A40A57F425C9663EA763A /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B9238C752809E4A2E6F5F4FC /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BA681B725A86B313C69D03E4 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SushiNekoTests/Pods-SushiNekoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5BCDD4691CB3F10700CDA37E /* Sources */ = {
@@ -508,6 +679,7 @@
 		};
 		5BCDD49A1CB3F10700CDA37E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 652DA1568E557D12AA3D1EDC /* Pods-SushiNeko.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Sushi Neko/Info.plist";
@@ -519,6 +691,7 @@
 		};
 		5BCDD49B1CB3F10700CDA37E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3ACF81373AD5C63CC82E1C38 /* Pods-SushiNeko.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Sushi Neko/Info.plist";
@@ -530,6 +703,7 @@
 		};
 		5BCDD49D1CB3F10700CDA37E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12BF2AF28DEB8FA1513A6826 /* Pods-SushiNekoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -543,6 +717,7 @@
 		};
 		5BCDD49E1CB3F10700CDA37E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57DED135A623B1B1B5BAD1B8 /* Pods-SushiNekoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "Sushi NekoTests/Info.plist";
@@ -555,6 +730,7 @@
 		};
 		5BCDD4A01CB3F10700CDA37E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12DED9EBD98FC4DB5C54E6A9 /* Pods-SushiNekoUITests.debug.xcconfig */;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				INFOPLIST_FILE = "Sushi NekoUITests/Info.plist";
@@ -568,6 +744,7 @@
 		};
 		5BCDD4A11CB3F10700CDA37E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F60DC30BFA1C587654B31FD /* Pods-SushiNekoUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "Sushi NekoUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
