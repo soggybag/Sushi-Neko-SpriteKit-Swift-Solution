@@ -29,9 +29,16 @@ class Character: SKSpriteNode {
         }
     }
     
-    /* You are required to implement this for your subclass to work */
-    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
-        super.init(texture: texture, color: color, size: size)
+    
+    
+    // MARK: - Init
+    
+    init() {
+        let texture = SKTexture(imageNamed: "character1")
+        
+        // Must implement the Designated Initializer
+        super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+        
     }
     
     /* You are required to implement this for your subclass to work */

@@ -8,6 +8,9 @@
 
 import SpriteKit
 
+
+
+
 /* Tracking enum for use with character and sushi side */
 enum Side {
     case Left, Right, None
@@ -18,14 +21,17 @@ enum GameState {
     case Title, Ready, Playing, GameOver
 }
 
+
+
+
 class GameScene: SKScene {
     
     /* Game objects */
-    var character: Character!
-    var sushiBasePiece: SushiPiece!
-    var playButton: MSButtonNode!
-    var healthBar: SKSpriteNode!
-    var scoreLabel: SKLabelNode!
+    let character: Character
+    let sushiBasePiece: SushiPiece
+    let playButton: MSButtonNode
+    let healthBar: SKSpriteNode
+    let scoreLabel: SKLabelNode
     
     /* Sushi tower array */
     var sushiTower: [SushiPiece] = []
@@ -49,27 +55,95 @@ class GameScene: SKScene {
         }
     }
     
-    override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
+    
+    
+    // MARK: - Init
+    
+    override init(size: CGSize) {
+        character = Character()
+        sushiBasePiece = SushiPiece()
+        playButton = MSButtonNode(imageNamed: "button")
+        healthBar = SKSpriteNode(imageNamed: "life")
+        scoreLabel = SKLabelNode(fontNamed: "Helvetica")
         
-        /* Connect game objects */
-        character = childNodeWithName("character") as! Character
-        sushiBasePiece = childNodeWithName("sushiBasePiece") as! SushiPiece
+        super.init(size: size)
         
-        /* UI game objects */
-        playButton = childNodeWithName("playButton") as! MSButtonNode
-        healthBar = childNodeWithName("healthBar") as! SKSpriteNode
-        scoreLabel = childNodeWithName("scoreLabel") as! SKLabelNode
+        setupBackground()
+        setupCharacter()
+        setupSushi()
+        setupPlayButton()
+        setupHealthBar()
+        setupScoreLabel()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    
+    
+    // MARK: - Setup
+    
+    func setupBackground() {
+        let background = SKSpriteNode(imageNamed: "background")
+        addChild(background)
+        background.anchorPoint = CGPoint(x: 0, y: 0)
+        // TODO: resize with proportion for screen size...
+        background.size = size
+    }
+    
+    func setupCharacter() {
+        addChild(character)
+        character.position.x = character.size.width / 2
+        character.position.y = 200
+    }
+    
+    func setupSushi() {
+        addChild(sushiBasePiece)
+        sushiBasePiece.position.x = size.width / 2
+        sushiBasePiece.position.y = 200
+    }
+    
+    func setupPlayButton() {
+        addChild(playButton)
+        playButton.position.x = size.width / 2
+        playButton.position.y = 75
         
         /* Setup play button selection handler */
         playButton.selectedHandler = {
-            
             /* Start game */
             self.state = .Ready
         }
+    }
+    
+    func setupHealthBar() {
+        let healthBack = SKSpriteNode(imageNamed: "life_bg")
+        addChild(healthBack)
+        healthBack.position.x = size.width / 2
+        healthBack.position.y = size.height - 50
         
-        /* Setup chopstick connections */
-        sushiBasePiece.connectChopsticks()
+        addChild(healthBar)
+        healthBar.anchorPoint.x = 0
+        healthBar.position.x = size.width / 2 - healthBar.size.width / 2
+        healthBar.position.y = healthBack.position.y
+    }
+    
+    func setupScoreLabel() {
+        addChild(scoreLabel)
+        scoreLabel.fontSize = 56
+        scoreLabel.position.x = size.width / 2
+        scoreLabel.position.y = size.height * 0.66
+        scoreLabel.text = "0"
+    }
+    
+    
+    
+    
+    // MARK: - Scene Lifecycle
+    
+    override func didMoveToView(view: SKView) {
+        /* Setup your scene here */
         
         /* Manually stack the start of the tower */
         addTowerPiece(.None)
@@ -78,6 +152,11 @@ class GameScene: SKScene {
         /* Randomize tower to just outside of the screen */
         addRandomPieces(10)
     }
+    
+    
+    
+    
+    // MARK: - Touch events
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         /* Called when a touch begins */
@@ -97,27 +176,27 @@ class GameScene: SKScene {
             
             /* Was touch on left/right hand side of screen? */
             if location.x > size.width / 2 {
-                character.side = .Right
+//                character.side = .Right
             } else {
-                character.side = .Left
+//                character.side = .Left
             }
             
             /* Grab sushi piece on top of the base sushi piece, it will always be 'first' */
             let firstPiece = sushiTower.first as SushiPiece!
             
             /* Check character side against sushi piece side (this is our death collision check)*/
-            if character.side == firstPiece.side {
-                
-                /* Drop all the sushi pieces down a place (visually) */
-                for node:SushiPiece in sushiTower {
-                    node.runAction(SKAction.moveBy(CGVector(dx: 0, dy: -55), duration: 0.10))
-                }
-                
-                gameOver()
-                
-                /* No need to continue as player dead */
-                return
-            }
+//            if character.side == firstPiece.side {
+//                
+//                /* Drop all the sushi pieces down a place (visually) */
+//                for node:SushiPiece in sushiTower {
+//                    node.runAction(SKAction.moveBy(CGVector(dx: 0, dy: -55), duration: 0.10))
+//                }
+//                
+//                gameOver()
+//                
+//                /* No need to continue as player dead */
+//                return
+//            }
             
             /* Increment Health */
             health += 0.1
@@ -129,7 +208,7 @@ class GameScene: SKScene {
             sushiTower.removeFirst()
             
             /* Animate the punched sushi piece */
-            firstPiece.flip(character.side)
+//            firstPiece.flip(character.side)
             
             /* Add a new sushi piece to the top of the sushi tower */
             addRandomPieces(1)
@@ -144,32 +223,38 @@ class GameScene: SKScene {
         }
     }
     
+    
+    
+    
+    
+    // MARK: - Utility Functions
+    
     func addTowerPiece(side: Side) {
         /* Add a new sushi piece to the sushi tower */
         
         /* Copy original sushi piece */
-        let newPiece = sushiBasePiece.copy() as! SushiPiece
-        newPiece.connectChopsticks()
+//        let newPiece = sushiBasePiece.copy() as! SushiPiece
+//        newPiece.connectChopsticks()
         
         /* Access last piece properties */
         let lastPiece = sushiTower.last
         
         /* Add on top of last piece, default on first piece */
-        let lastPosition = lastPiece?.position ?? sushiBasePiece.position
-        newPiece.position = lastPosition + CGPoint(x: 0, y: 55)
+//        let lastPosition = lastPiece?.position ?? sushiBasePiece.position
+//        newPiece.position = lastPosition + CGPoint(x: 0, y: 55)
         
         /* Increment Z to ensure it's on top of the last piece, default on first piece*/
-        let lastZPosition = lastPiece?.zPosition ?? sushiBasePiece.zPosition
-        newPiece.zPosition = lastZPosition + 1
+//        let lastZPosition = lastPiece?.zPosition ?? sushiBasePiece.zPosition
+//        newPiece.zPosition = lastZPosition + 1
         
         /* Set side */
-        newPiece.side = side
+//        newPiece.side = side
         
         /* Add sushi to scene */
-        addChild(newPiece)
+//        addChild(newPiece)
         
         /* Add sushi piece to the sushi tower */
-        sushiTower.append(newPiece)
+//        sushiTower.append(newPiece)
     }
     
     func addRandomPieces(total: Int) {
@@ -177,28 +262,28 @@ class GameScene: SKScene {
         
         for _ in 1...total {
             
-            /* Need to access last piece properties */
-            let lastPiece = sushiTower.last as SushiPiece!
-            
-            /* Need to ensure we don't create impossible sushi structures */
-            if lastPiece.side != .None {
-                addTowerPiece(.None)
-            } else {
-                
-                /* Random Number Generator */
-                let rand = CGFloat.random(min: 0, max: 1.0)
-                
-                if rand < 0.45 {
-                    /* 45% Chance of a left piece */
-                    addTowerPiece(.Left)
-                } else if rand < 0.9 {
-                    /* 45% Chance of a right piece */
-                    addTowerPiece(.Right)
-                } else {
-                    /* 10% Chance of an empty piece */
-                    addTowerPiece(.None)
-                }
-            }
+//            /* Need to access last piece properties */
+//            let lastPiece = sushiTower.last as SushiPiece!
+//            
+//            /* Need to ensure we don't create impossible sushi structures */
+//            if lastPiece.side != .None {
+//                addTowerPiece(.None)
+//            } else {
+//                
+//                /* Random Number Generator */
+//                let rand = CGFloat.random(min: 0, max: 1.0)
+//                
+//                if rand < 0.45 {
+//                    /* 45% Chance of a left piece */
+//                    addTowerPiece(.Left)
+//                } else if rand < 0.9 {
+//                    /* 45% Chance of a right piece */
+//                    addTowerPiece(.Right)
+//                } else {
+//                    /* 10% Chance of an empty piece */
+//                    addTowerPiece(.None)
+//                }
+//            }
         }
     }
     
@@ -213,23 +298,23 @@ class GameScene: SKScene {
         }
         
         /* Make the player turn red */
-        character.runAction(SKAction.colorizeWithColor(UIColor.redColor(), colorBlendFactor: 1.0, duration: 0.50))
+//        character.runAction(SKAction.colorizeWithColor(UIColor.redColor(), colorBlendFactor: 1.0, duration: 0.50))
         
         /* Change play button selection handler */
-        playButton.selectedHandler = {
-            
-            /* Grab reference to our SpriteKit view */
-            let skView = self.view as SKView!
-            
-            /* Load Game scene */
-            let scene = GameScene(fileNamed:"GameScene") as GameScene!
-            
-            /* Ensure correct aspect mode */
-            scene.scaleMode = .AspectFill
-            
-            /* Restart GameScene */
-            skView.presentScene(scene)
-        }
+//        playButton.selectedHandler = {
+//            
+//            /* Grab reference to our SpriteKit view */
+//            let skView = self.view as SKView!
+//            
+//            /* Load Game scene */
+//            let scene = GameScene(size: self.view!.frame.size) as GameScene!
+//            
+//            /* Ensure correct aspect mode */
+//            scene.scaleMode = .AspectFill
+//            
+//            /* Restart GameScene */
+//            skView.presentScene(scene)
+//        }
     }
     
     override func update(currentTime: CFTimeInterval) {

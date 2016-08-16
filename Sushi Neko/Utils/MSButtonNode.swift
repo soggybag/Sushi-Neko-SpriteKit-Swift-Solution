@@ -43,6 +43,17 @@ class MSButtonNode: SKSpriteNode {
         }
     }
     
+    
+    
+    // MARK: - Init
+    
+    init(imageNamed: String) {
+        let texture = SKTexture(imageNamed: imageNamed)
+        
+        super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+        
+    }
+    
     /* Support for NSKeyedArchiver (loading objects from SK Scene Editor */
     required init?(coder aDecoder: NSCoder) {
         

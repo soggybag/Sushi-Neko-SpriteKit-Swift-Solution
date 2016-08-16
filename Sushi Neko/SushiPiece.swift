@@ -10,6 +10,10 @@ import SpriteKit
 
 class SushiPiece: SKSpriteNode {
     
+    /* Chopstick objects */
+    let rightChopstick: SKSpriteNode
+    let leftChopstick: SKSpriteNode
+    
     /* Sushi type */
     var side: Side = .None {
         
@@ -30,29 +34,51 @@ class SushiPiece: SKSpriteNode {
         }
     }
     
-    /* Chopstick objects */
-    var rightChopstick: SKSpriteNode!
-    var leftChopstick: SKSpriteNode!
     
-    /* You are required to implement this for your subclass to work */
-    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
-        super.init(texture: texture, color: color, size: size)
-    }
     
-    /* You are required to implement this for your subclass to work */
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
     
-    func connectChopsticks() {
-        /* Connect our child chopstick nodes */
+    // MARK: - Init
+    
+    init() {
+        rightChopstick = SKSpriteNode(imageNamed: "chopstick")
+        leftChopstick = SKSpriteNode(imageNamed: "chopstick")
         
-        rightChopstick = childNodeWithName("rightChopstick") as! SKSpriteNode
-        leftChopstick = childNodeWithName("leftChopstick") as! SKSpriteNode
+        let texture = SKTexture(imageNamed: "roll")
+        
+        super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+        
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    
+    // MARK: - Setup
+    
+    func setup() {
+        addChild(rightChopstick)
+        addChild(leftChopstick)
+        
+        print(leftChopstick.position.x)
+        print(leftChopstick.hidden)
+        
+        rightChopstick.xScale = -1
+        rightChopstick.anchorPoint.x = 1.4
+        leftChopstick.anchorPoint.x = 1.4
+        
+        rightChopstick.position.y = 35
+        leftChopstick.position.y = 35
         
         /* Set the default side */
         side = .None
     }
+    
+    
+    
+    // MARK: - Utility
     
     func flip(side: Side) {
         /* Flip the sushi out of the screen */
