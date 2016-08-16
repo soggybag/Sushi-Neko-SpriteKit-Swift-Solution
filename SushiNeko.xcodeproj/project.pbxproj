@@ -11,7 +11,6 @@
 		5B7DA06A1CB6C42A00069506 /* SushiPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DA0691CB6C42A00069506 /* SushiPiece.swift */; };
 		5BC666B71CB40206000C3C09 /* assets.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5BC666B61CB40206000C3C09 /* assets.atlas */; };
 		5BCDD4711CB3F10700CDA37E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCDD4701CB3F10700CDA37E /* AppDelegate.swift */; };
-		5BCDD4731CB3F10700CDA37E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5BCDD4721CB3F10700CDA37E /* GameScene.sks */; };
 		5BCDD4751CB3F10700CDA37E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCDD4741CB3F10700CDA37E /* GameScene.swift */; };
 		5BCDD4771CB3F10700CDA37E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCDD4761CB3F10700CDA37E /* GameViewController.swift */; };
 		5BCDD47A1CB3F10700CDA37E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BCDD4781CB3F10700CDA37E /* Main.storyboard */; };
@@ -60,7 +59,6 @@
 		5BC666B61CB40206000C3C09 /* assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = assets.atlas; sourceTree = "<group>"; };
 		5BCDD46D1CB3F10700CDA37E /* SushiNeko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SushiNeko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCDD4701CB3F10700CDA37E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5BCDD4721CB3F10700CDA37E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		5BCDD4741CB3F10700CDA37E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		5BCDD4761CB3F10700CDA37E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		5BCDD4791CB3F10700CDA37E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				5BED6D211CBBE2A9004E758D /* Utils */,
 				5BC666B61CB40206000C3C09 /* assets.atlas */,
 				5BCDD4701CB3F10700CDA37E /* AppDelegate.swift */,
-				5BCDD4721CB3F10700CDA37E /* GameScene.sks */,
 				5BCDD4741CB3F10700CDA37E /* GameScene.swift */,
 				5BCDD4761CB3F10700CDA37E /* GameViewController.swift */,
 				5B7DA0691CB6C42A00069506 /* SushiPiece.swift */,
@@ -319,7 +316,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BCDD4731CB3F10700CDA37E /* GameScene.sks in Resources */,
 				5BED6D201CBBC3E8004E758D /* AnimationActions.sks in Resources */,
 				5BCDD47F1CB3F10700CDA37E /* LaunchScreen.storyboard in Resources */,
 				5BCDD47C1CB3F10700CDA37E /* Assets.xcassets in Resources */,
