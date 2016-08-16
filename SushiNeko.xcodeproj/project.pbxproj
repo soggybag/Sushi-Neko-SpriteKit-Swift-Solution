@@ -153,14 +153,14 @@
 				5BCDD4721CB3F10700CDA37E /* GameScene.sks */,
 				5BCDD4741CB3F10700CDA37E /* GameScene.swift */,
 				5BCDD4761CB3F10700CDA37E /* GameViewController.swift */,
+				5B7DA0691CB6C42A00069506 /* SushiPiece.swift */,
+				5BED6D1D1CBBC116004E758D /* Character.swift */,
+				5BED6D1F1CBBC3E8004E758D /* AnimationActions.sks */,
 				5BCDD4781CB3F10700CDA37E /* Main.storyboard */,
 				5B28FAE61CDA0C610041A87E /* SFX */,
 				5BCDD47B1CB3F10700CDA37E /* Assets.xcassets */,
 				5BCDD47D1CB3F10700CDA37E /* LaunchScreen.storyboard */,
 				5BCDD4801CB3F10700CDA37E /* Info.plist */,
-				5B7DA0691CB6C42A00069506 /* SushiPiece.swift */,
-				5BED6D1D1CBBC116004E758D /* Character.swift */,
-				5BED6D1F1CBBC3E8004E758D /* AnimationActions.sks */,
 			);
 			name = SushiNeko;
 			path = "Sushi Neko";
