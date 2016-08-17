@@ -92,57 +92,57 @@ class GameScene: SKScene {
             state = .playing
         }
         
-        for touch in touches {
+        /* We only need a single touch here */
+        let touch = touches.first!
             
-            /* Get touch position in scene */
-            let location = touch.location(in: self)
+        /* Get touch position in scene */
+        let location = touch.location(in: self)
+        
+        /* Was touch on left/right hand side of screen? */
+        if location.x > size.width / 2 {
+            character.side = .right
+        } else {
+            character.side = .left
+        }
+        
+        /* Grab sushi piece on top of the base sushi piece, it will always be 'first' */
+        let firstPiece = sushiTower.first as SushiPiece!
+        
+        /* Check character side against sushi piece side (this is our death collision check)*/
+        if character.side == firstPiece?.side {
             
-            /* Was touch on left/right hand side of screen? */
-            if location.x > size.width / 2 {
-                character.side = .right
-            } else {
-                character.side = .left
+            /* Drop all the sushi pieces down a place (visually) */
+            for sushiPiece in sushiTower {
+                sushiPiece.run(SKAction.move(by: CGVector(dx: 0, dy: -55), duration: 0.10))
             }
             
-            /* Grab sushi piece on top of the base sushi piece, it will always be 'first' */
-            let firstPiece = sushiTower.first as SushiPiece!
+            gameOver()
             
-            /* Check character side against sushi piece side (this is our death collision check)*/
-            if character.side == firstPiece?.side {
-                
-                /* Drop all the sushi pieces down a place (visually) */
-                for node:SushiPiece in sushiTower {
-                    node.run(SKAction.move(by: CGVector(dx: 0, dy: -55), duration: 0.10))
-                }
-                
-                gameOver()
-                
-                /* No need to continue as player dead */
-                return
-            }
+            /* No need to continue as player dead */
+            return
+        }
+        
+        /* Increment Health */
+        health += 0.1
+        
+        /* Increment Score */
+        score += 1
+        
+        /* Remove from sushi tower array */
+        sushiTower.removeFirst()
+        
+        /* Animate the punched sushi piece */
+        firstPiece?.flip(character.side)
+        
+        /* Add a new sushi piece to the top of the sushi tower */
+        addRandomPieces(1)
+        
+        /* Drop all the sushi pieces down one place */
+        for sushiPiece in sushiTower {
+            sushiPiece.run(SKAction.move(by: CGVector(dx: 0, dy: -55), duration: 0.10))
             
-            /* Increment Health */
-            health += 0.1
-            
-            /* Increment Score */
-            score += 1
-            
-            /* Remove from sushi tower array */
-            sushiTower.removeFirst()
-            
-            /* Animate the punched sushi piece */
-            firstPiece?.flip(character.side)
-            
-            /* Add a new sushi piece to the top of the sushi tower */
-            addRandomPieces(1)
-            
-            /* Drop all the sushi pieces down one place */
-            for node:SushiPiece in sushiTower {
-                node.run(SKAction.move(by: CGVector(dx: 0, dy: -55), duration: 0.10))
-                
-                /* Reduce zPosition to stop zPosition climbing over UI */
-                node.zPosition -= 1
-            }
+            /* Reduce zPosition to stop zPosition climbing over UI */
+            sushiPiece.zPosition -= 1
         }
     }
     
@@ -210,8 +210,8 @@ class GameScene: SKScene {
         state = .gameOver
         
         /* Turn all the sushi pieces red*/
-        for node:SushiPiece in sushiTower {
-            node.run(SKAction.colorize(with: UIColor.red, colorBlendFactor: 1.0, duration: 0.50))
+        for sushiPiece in sushiTower {
+            sushiPiece.run(SKAction.colorize(with: UIColor.red, colorBlendFactor: 1.0, duration: 0.50))
         }
         
         /* Make the player turn red */
