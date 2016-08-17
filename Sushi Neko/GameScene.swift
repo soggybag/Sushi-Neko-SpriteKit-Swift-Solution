@@ -10,13 +10,15 @@ import SpriteKit
 
 /* Tracking enum for use with character and sushi side */
 enum Side {
-    case Left, Right, None
+    case left, right, none
 }
+
 
 /* Tracking enum for game state */
 enum GameState {
-    case Title, Ready, Playing, GameOver
+    case title, ready, playing, gameOver
 }
+
 
 class GameScene: SKScene {
     
@@ -31,7 +33,7 @@ class GameScene: SKScene {
     var sushiTower: [SushiPiece] = []
     
     /* Game management */
-    var state: GameState = .Title
+    var state: GameState = .title
     
     var health: CGFloat = 1.0 {
         didSet {
@@ -49,68 +51,68 @@ class GameScene: SKScene {
         }
     }
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         /* Setup your scene here */
         
         /* Connect game objects */
-        character = childNodeWithName("character") as! Character
-        sushiBasePiece = childNodeWithName("sushiBasePiece") as! SushiPiece
+        character = childNode(withName: "character") as! Character
+        sushiBasePiece = childNode(withName: "sushiBasePiece") as! SushiPiece
         
         /* UI game objects */
-        playButton = childNodeWithName("playButton") as! MSButtonNode
-        healthBar = childNodeWithName("healthBar") as! SKSpriteNode
-        scoreLabel = childNodeWithName("scoreLabel") as! SKLabelNode
+        playButton = childNode(withName: "playButton") as! MSButtonNode
+        healthBar = childNode(withName: "healthBar") as! SKSpriteNode
+        scoreLabel = childNode(withName: "scoreLabel") as! SKLabelNode
         
         /* Setup play button selection handler */
         playButton.selectedHandler = {
             
             /* Start game */
-            self.state = .Ready
+            self.state = .ready
         }
         
         /* Setup chopstick connections */
         sushiBasePiece.connectChopsticks()
         
         /* Manually stack the start of the tower */
-        addTowerPiece(.None)
-        addTowerPiece(.Right)
+        addTowerPiece(.none)
+        addTowerPiece(.right)
         
         /* Randomize tower to just outside of the screen */
         addRandomPieces(10)
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         /* Called when a touch begins */
         
         /* Game not ready to play */
-        if state == .GameOver || state == .Title { return }
+        if state == .gameOver || state == .title { return }
         
         /* Game begins on first touch */
-        if state == .Ready {
-            state = .Playing
+        if state == .ready {
+            state = .playing
         }
         
         for touch in touches {
             
             /* Get touch position in scene */
-            let location = touch.locationInNode(self)
+            let location = touch.location(in: self)
             
             /* Was touch on left/right hand side of screen? */
             if location.x > size.width / 2 {
-                character.side = .Right
+                character.side = .right
             } else {
-                character.side = .Left
+                character.side = .left
             }
             
             /* Grab sushi piece on top of the base sushi piece, it will always be 'first' */
             let firstPiece = sushiTower.first as SushiPiece!
             
             /* Check character side against sushi piece side (this is our death collision check)*/
-            if character.side == firstPiece.side {
+            if character.side == firstPiece?.side {
                 
                 /* Drop all the sushi pieces down a place (visually) */
                 for node:SushiPiece in sushiTower {
-                    node.runAction(SKAction.moveBy(CGVector(dx: 0, dy: -55), duration: 0.10))
+                    node.run(SKAction.move(by: CGVector(dx: 0, dy: -55), duration: 0.10))
                 }
                 
                 gameOver()
@@ -129,22 +131,22 @@ class GameScene: SKScene {
             sushiTower.removeFirst()
             
             /* Animate the punched sushi piece */
-            firstPiece.flip(character.side)
+            firstPiece?.flip(character.side)
             
             /* Add a new sushi piece to the top of the sushi tower */
             addRandomPieces(1)
             
             /* Drop all the sushi pieces down one place */
             for node:SushiPiece in sushiTower {
-                node.runAction(SKAction.moveBy(CGVector(dx: 0, dy: -55), duration: 0.10))
+                node.run(SKAction.move(by: CGVector(dx: 0, dy: -55), duration: 0.10))
                 
                 /* Reduce zPosition to stop zPosition climbing over UI */
-                node.zPosition--
+                node.zPosition -= 1
             }
         }
     }
     
-    func addTowerPiece(side: Side) {
+    func addTowerPiece(_ side: Side) {
         /* Add a new sushi piece to the sushi tower */
         
         /* Copy original sushi piece */
@@ -172,7 +174,7 @@ class GameScene: SKScene {
         sushiTower.append(newPiece)
     }
     
-    func addRandomPieces(total: Int) {
+    func addRandomPieces(_ total: Int) {
         /* Add random sushi pieces to the sushi tower */
         
         for _ in 1...total {
@@ -181,8 +183,8 @@ class GameScene: SKScene {
             let lastPiece = sushiTower.last as SushiPiece!
             
             /* Need to ensure we don't create impossible sushi structures */
-            if lastPiece.side != .None {
-                addTowerPiece(.None)
+            if lastPiece?.side != Side.none {
+                addTowerPiece(Side.none)
             } else {
                 
                 /* Random Number Generator */
@@ -190,13 +192,13 @@ class GameScene: SKScene {
                 
                 if rand < 0.45 {
                     /* 45% Chance of a left piece */
-                    addTowerPiece(.Left)
+                    addTowerPiece(.left)
                 } else if rand < 0.9 {
                     /* 45% Chance of a right piece */
-                    addTowerPiece(.Right)
+                    addTowerPiece(.right)
                 } else {
                     /* 10% Chance of an empty piece */
-                    addTowerPiece(.None)
+                    addTowerPiece(.none)
                 }
             }
         }
@@ -205,15 +207,15 @@ class GameScene: SKScene {
     func gameOver() {
         /* Game over! */
         
-        state = .GameOver
+        state = .gameOver
         
         /* Turn all the sushi pieces red*/
         for node:SushiPiece in sushiTower {
-            node.runAction(SKAction.colorizeWithColor(UIColor.redColor(), colorBlendFactor: 1.0, duration: 0.50))
+            node.run(SKAction.colorize(with: UIColor.red, colorBlendFactor: 1.0, duration: 0.50))
         }
         
         /* Make the player turn red */
-        character.runAction(SKAction.colorizeWithColor(UIColor.redColor(), colorBlendFactor: 1.0, duration: 0.50))
+        character.run(SKAction.colorize(with: UIColor.red, colorBlendFactor: 1.0, duration: 0.50))
         
         /* Change play button selection handler */
         playButton.selectedHandler = {
@@ -225,16 +227,16 @@ class GameScene: SKScene {
             let scene = GameScene(fileNamed:"GameScene") as GameScene!
             
             /* Ensure correct aspect mode */
-            scene.scaleMode = .AspectFill
+            scene?.scaleMode = .aspectFill
             
             /* Restart GameScene */
-            skView.presentScene(scene)
+            skView?.presentScene(scene)
         }
     }
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
-        if state != .Playing { return }
+        if state != .playing { return }
         
         /* Decrease Health */
         health -= 0.01
