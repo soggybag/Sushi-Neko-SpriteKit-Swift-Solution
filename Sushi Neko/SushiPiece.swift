@@ -16,19 +16,18 @@ class SushiPiece: SKSpriteNode {
     
     /* Sushi type */
     var side: Side = .None {
-        
         didSet {
             switch side {
             case .Left:
                 /* Show left chopstick */
-                leftChopstick.hidden = false
+                leftChopstick.isHidden = false
             case .Right:
                 /* Show right chopstick */
-                rightChopstick.hidden = false
+                rightChopstick.isHidden = false
             case .None:
                 /* Hide all chopsticks */
-                leftChopstick.hidden = true
-                rightChopstick.hidden = true
+                leftChopstick.isHidden = true
+                rightChopstick.isHidden = true
             }
             
         }
@@ -45,7 +44,7 @@ class SushiPiece: SKSpriteNode {
         
         let texture = SKTexture(imageNamed: "roll")
         
-        super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+        super.init(texture: texture, color: UIColor.clear, size: texture.size())
         
         setup()
     }
@@ -63,7 +62,7 @@ class SushiPiece: SKSpriteNode {
         addChild(leftChopstick)
         
         print(leftChopstick.position.x)
-        print(leftChopstick.hidden)
+        print(leftChopstick.isHidden)
         
         rightChopstick.xScale = -1
         rightChopstick.anchorPoint.x = 1.4
@@ -80,7 +79,7 @@ class SushiPiece: SKSpriteNode {
     
     // MARK: - Utility
     
-    func flip(side: Side) {
+    func flip(_ side: Side) {
         /* Flip the sushi out of the screen */
         
         var actionName: String = ""
@@ -99,7 +98,7 @@ class SushiPiece: SKSpriteNode {
         
         /* Build sequence, flip then remove from scene */
         let sequence = SKAction.sequence([flip,remove])
-        runAction(sequence)
+        run(sequence)
     }
     
 }

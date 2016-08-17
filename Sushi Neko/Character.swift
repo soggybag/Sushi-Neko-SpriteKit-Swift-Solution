@@ -16,16 +16,16 @@ class Character: SKSpriteNode {
             
             if side == .Left {
                 xScale = 1
-                position.x = 70
+                // position.x = 70
             } else {
                 /* An easy way to flip an asset horizontally is to invert the X-axis scale */
                 xScale = -1
-                position.x = 252
+                // position.x = 252
             }
             
             /* Load/Run the punch action */
             let punch = SKAction(named: "Punch")!
-            runAction(punch)
+            run(punch)
         }
     }
     
@@ -36,9 +36,11 @@ class Character: SKSpriteNode {
     init() {
         let texture = SKTexture(imageNamed: "character1")
         
-        // Must implement the Designated Initializer
-        super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
         
+        // Must implement the Designated Initializer
+        super.init(texture: texture, color: UIColor.clear, size: texture.size())
+        
+        anchorPoint.x = 1
     }
     
     /* You are required to implement this for your subclass to work */
