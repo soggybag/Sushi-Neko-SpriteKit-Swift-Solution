@@ -37,7 +37,7 @@ class SushiPiece: SKSpriteNode {
     
     
     // MARK: - Init
-    
+
     init() {
         rightChopstick = SKSpriteNode(imageNamed: "chopstick")
         leftChopstick = SKSpriteNode(imageNamed: "chopstick")
@@ -48,7 +48,7 @@ class SushiPiece: SKSpriteNode {
         
         setup()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

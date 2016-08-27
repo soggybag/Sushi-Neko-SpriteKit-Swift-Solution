@@ -19,21 +19,8 @@
 		5BCDD48A1CB3F10700CDA37E /* Sushi_NekoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCDD4891CB3F10700CDA37E /* Sushi_NekoTests.swift */; };
 		5BCDD4951CB3F10700CDA37E /* Sushi_NekoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCDD4941CB3F10700CDA37E /* Sushi_NekoUITests.swift */; };
 		5BED6D1E1CBBC116004E758D /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D1D1CBBC116004E758D /* Character.swift */; };
-		5BED6D201CBBC3E8004E758D /* AnimationActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5BED6D1F1CBBC3E8004E758D /* AnimationActions.sks */; };
-		5BED6D311CBBE2A9004E758D /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D221CBBE2A9004E758D /* MSButtonNode.swift */; };
-		5BED6D321CBBE2A9004E758D /* MSReferenceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED6D231CBBE2A9004E758D /* MSReferenceNode.swift */; };
-		D80456FB1D63D1A200E56EC2 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80456D11D63D1A200E56EC2 /* CGFloat+Extensions.swift */; };
-		D80456FC1D63D1A200E56EC2 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80456D21D63D1A200E56EC2 /* CGPoint+Extensions.swift */; };
-		D80456FD1D63D1A200E56EC2 /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80456D31D63D1A200E56EC2 /* CGVector+Extensions.swift */; };
-		D80456FE1D63D1A200E56EC2 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80456D41D63D1A200E56EC2 /* Int+Extensions.swift */; };
-		D80456FF1D63D1A200E56EC2 /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80456D51D63D1A200E56EC2 /* SKAction+Extensions.swift */; };
-		D80457001D63D1A200E56EC2 /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80456D61D63D1A200E56EC2 /* SKAction+SpecialEffects.swift */; };
-		D80457011D63D1A200E56EC2 /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80456D71D63D1A200E56EC2 /* SKColor+Extensions.swift */; };
-		D80457021D63D1A200E56EC2 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80456D81D63D1A200E56EC2 /* SKNode+Extensions.swift */; };
-		D80457031D63D1A200E56EC2 /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80456D91D63D1A200E56EC2 /* SKTAudio.swift */; };
-		D80457041D63D1A200E56EC2 /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80456DA1D63D1A200E56EC2 /* SKTEffects.swift */; };
-		D80457051D63D1A200E56EC2 /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80456DB1D63D1A200E56EC2 /* SKTTimingFunctions.swift */; };
-		D80457061D63D1A200E56EC2 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80456DC1D63D1A200E56EC2 /* Vector3.swift */; };
+		D804576B1D6536A600E56EC2 /* AnimationActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = D804576A1D6536A600E56EC2 /* AnimationActions.sks */; };
+		D8A3118B1D692AF600D02440 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A3118A1D692AF600D02440 /* MSButtonNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +46,7 @@
 		5BC666B61CB40206000C3C09 /* assets.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = assets.atlas; sourceTree = "<group>"; };
 		5BCDD46D1CB3F10700CDA37E /* SushiNeko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SushiNeko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCDD4701CB3F10700CDA37E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5BCDD4741CB3F10700CDA37E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		5BCDD4741CB3F10700CDA37E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		5BCDD4761CB3F10700CDA37E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		5BCDD4791CB3F10700CDA37E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5BCDD47B1CB3F10700CDA37E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,21 +59,8 @@
 		5BCDD4941CB3F10700CDA37E /* Sushi_NekoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sushi_NekoUITests.swift; sourceTree = "<group>"; };
 		5BCDD4961CB3F10700CDA37E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BED6D1D1CBBC116004E758D /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		5BED6D1F1CBBC3E8004E758D /* AnimationActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AnimationActions.sks; sourceTree = "<group>"; };
-		5BED6D221CBBE2A9004E758D /* MSButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
-		5BED6D231CBBE2A9004E758D /* MSReferenceNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSReferenceNode.swift; sourceTree = "<group>"; };
-		D80456D11D63D1A200E56EC2 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
-		D80456D21D63D1A200E56EC2 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
-		D80456D31D63D1A200E56EC2 /* CGVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
-		D80456D41D63D1A200E56EC2 /* Int+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
-		D80456D51D63D1A200E56EC2 /* SKAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+Extensions.swift"; sourceTree = "<group>"; };
-		D80456D61D63D1A200E56EC2 /* SKAction+SpecialEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+SpecialEffects.swift"; sourceTree = "<group>"; };
-		D80456D71D63D1A200E56EC2 /* SKColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKColor+Extensions.swift"; sourceTree = "<group>"; };
-		D80456D81D63D1A200E56EC2 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
-		D80456D91D63D1A200E56EC2 /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
-		D80456DA1D63D1A200E56EC2 /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
-		D80456DB1D63D1A200E56EC2 /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
-		D80456DC1D63D1A200E56EC2 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
+		D804576A1D6536A600E56EC2 /* AnimationActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AnimationActions.sks; sourceTree = "<group>"; };
+		D8A3118A1D692AF600D02440 /* MSButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,14 +119,14 @@
 		5BCDD46F1CB3F10700CDA37E /* SushiNeko */ = {
 			isa = PBXGroup;
 			children = (
-				5BED6D211CBBE2A9004E758D /* Utils */,
 				5BC666B61CB40206000C3C09 /* assets.atlas */,
 				5BCDD4701CB3F10700CDA37E /* AppDelegate.swift */,
 				5BCDD4741CB3F10700CDA37E /* GameScene.swift */,
 				5BCDD4761CB3F10700CDA37E /* GameViewController.swift */,
 				5B7DA0691CB6C42A00069506 /* SushiPiece.swift */,
 				5BED6D1D1CBBC116004E758D /* Character.swift */,
-				5BED6D1F1CBBC3E8004E758D /* AnimationActions.sks */,
+				D8A3118A1D692AF600D02440 /* MSButtonNode.swift */,
+				D804576A1D6536A600E56EC2 /* AnimationActions.sks */,
 				5BCDD4781CB3F10700CDA37E /* Main.storyboard */,
 				5B28FAE61CDA0C610041A87E /* SFX */,
 				5BCDD47B1CB3F10700CDA37E /* Assets.xcassets */,
@@ -181,36 +155,6 @@
 			);
 			name = SushiNekoUITests;
 			path = "Sushi NekoUITests";
-			sourceTree = "<group>";
-		};
-		5BED6D211CBBE2A9004E758D /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				5BED6D221CBBE2A9004E758D /* MSButtonNode.swift */,
-				5BED6D231CBBE2A9004E758D /* MSReferenceNode.swift */,
-				D80456D01D63D1A200E56EC2 /* SKTUtils */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		D80456D01D63D1A200E56EC2 /* SKTUtils */ = {
-			isa = PBXGroup;
-			children = (
-				D80456D11D63D1A200E56EC2 /* CGFloat+Extensions.swift */,
-				D80456D21D63D1A200E56EC2 /* CGPoint+Extensions.swift */,
-				D80456D31D63D1A200E56EC2 /* CGVector+Extensions.swift */,
-				D80456D41D63D1A200E56EC2 /* Int+Extensions.swift */,
-				D80456D51D63D1A200E56EC2 /* SKAction+Extensions.swift */,
-				D80456D61D63D1A200E56EC2 /* SKAction+SpecialEffects.swift */,
-				D80456D71D63D1A200E56EC2 /* SKColor+Extensions.swift */,
-				D80456D81D63D1A200E56EC2 /* SKNode+Extensions.swift */,
-				D80456D91D63D1A200E56EC2 /* SKTAudio.swift */,
-				D80456DA1D63D1A200E56EC2 /* SKTEffects.swift */,
-				D80456DB1D63D1A200E56EC2 /* SKTTimingFunctions.swift */,
-				D80456DC1D63D1A200E56EC2 /* Vector3.swift */,
-			);
-			name = SKTUtils;
-			path = "SKTUtils-swift3/SKTUtils";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,7 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BED6D201CBBC3E8004E758D /* AnimationActions.sks in Resources */,
+				D804576B1D6536A600E56EC2 /* AnimationActions.sks in Resources */,
 				5BCDD47F1CB3F10700CDA37E /* LaunchScreen.storyboard in Resources */,
 				5BCDD47C1CB3F10700CDA37E /* Assets.xcassets in Resources */,
 				5BC666B71CB40206000C3C09 /* assets.atlas in Resources */,
@@ -351,25 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D80457011D63D1A200E56EC2 /* SKColor+Extensions.swift in Sources */,
-				D80457051D63D1A200E56EC2 /* SKTTimingFunctions.swift in Sources */,
-				D80457021D63D1A200E56EC2 /* SKNode+Extensions.swift in Sources */,
-				D80456FB1D63D1A200E56EC2 /* CGFloat+Extensions.swift in Sources */,
-				D80456FC1D63D1A200E56EC2 /* CGPoint+Extensions.swift in Sources */,
-				D80456FE1D63D1A200E56EC2 /* Int+Extensions.swift in Sources */,
-				D80457001D63D1A200E56EC2 /* SKAction+SpecialEffects.swift in Sources */,
-				D80456FF1D63D1A200E56EC2 /* SKAction+Extensions.swift in Sources */,
-				D80457031D63D1A200E56EC2 /* SKTAudio.swift in Sources */,
-				5BED6D321CBBE2A9004E758D /* MSReferenceNode.swift in Sources */,
-				D80456FD1D63D1A200E56EC2 /* CGVector+Extensions.swift in Sources */,
 				5BCDD4751CB3F10700CDA37E /* GameScene.swift in Sources */,
-				D80457041D63D1A200E56EC2 /* SKTEffects.swift in Sources */,
 				5BCDD4771CB3F10700CDA37E /* GameViewController.swift in Sources */,
 				5B7DA06A1CB6C42A00069506 /* SushiPiece.swift in Sources */,
-				5BED6D311CBBE2A9004E758D /* MSButtonNode.swift in Sources */,
+				D8A3118B1D692AF600D02440 /* MSButtonNode.swift in Sources */,
 				5BED6D1E1CBBC116004E758D /* Character.swift in Sources */,
 				5BCDD4711CB3F10700CDA37E /* AppDelegate.swift in Sources */,
-				D80457061D63D1A200E56EC2 /* Vector3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

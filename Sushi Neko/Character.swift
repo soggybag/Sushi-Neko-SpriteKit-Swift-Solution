@@ -10,6 +10,8 @@ import SpriteKit
 
 class Character: SKSpriteNode {
     
+    let punch: SKAction
+    
     /* Character side */
     var side: Side = .Left {
         didSet {
@@ -24,7 +26,8 @@ class Character: SKSpriteNode {
             }
             
             /* Load/Run the punch action */
-            let punch = SKAction(named: "Punch")!
+            // let punch = SKAction(named: "Punch")!
+            // run(punch)
             run(punch)
         }
     }
@@ -32,19 +35,30 @@ class Character: SKSpriteNode {
     
     
     // MARK: - Init
-    
+
     init() {
         let texture = SKTexture(imageNamed: "character1")
+        let punchTexture1 = SKTexture(imageNamed: "character2")
+        let punchTexture2 = SKTexture(imageNamed: "character3")
         
+        punch = SKAction.animate(with: [punchTexture1, punchTexture2, punchTexture1], timePerFrame: 0.05, resize: true, restore: true)
         
         // Must implement the Designated Initializer
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
         
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    // MARK: - Setup 
+    
+    func setup() {
         anchorPoint.x = 1
     }
     
-    /* You are required to implement this for your subclass to work */
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+    
 }

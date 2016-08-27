@@ -22,8 +22,6 @@ enum GameState {
 }
 
 
-
-
 class GameScene: SKScene {
     
     /* Some useful numbers */
@@ -52,7 +50,7 @@ class GameScene: SKScene {
             healthBar.xScale = health
         }
     }
-    
+
     var score: Int = 0 {
         didSet {
             scoreLabel.text = String(score)
@@ -74,7 +72,7 @@ class GameScene: SKScene {
         
         /* Setup all of the elements */
         setupBackground()
-        setupCharacter()
+        setupPlayer()
         setupSushi()
         setupPlayButton()
         setupHealthBar()
@@ -89,7 +87,7 @@ class GameScene: SKScene {
     
     
     // MARK: - Setup
-    
+
     func setupBackground() {
         let background = SKSpriteNode(imageNamed: "background")
         addChild(background)
@@ -98,7 +96,7 @@ class GameScene: SKScene {
         background.size = size
     }
     
-    func setupCharacter() {
+    func setupPlayer() {
         addChild(character)
         character.position.x = size.width / 2
         character.position.y = firstPieceY
@@ -152,7 +150,7 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         /* Setup your scene here */
-        state = .Ready
+        state = .Title
         
         /* Manually stack the start of the tower */
         addTowerPiece(side: .None)
@@ -216,16 +214,6 @@ class GameScene: SKScene {
         
         /* Add a new sushi piece to the top of the sushi tower */
         addRandomPieces(total: 1)
-        
-        /* Drop all the sushi pieces down one place */
-        /*for node:SushiPiece in sushiTower {
-            // node.run(SKAction.move(by: CGVector(dx: 0, dy: -sushiPieceHeight), duration: 0.10))
-            // dropTower()
-            
-            /* Reduce zPosition to stop zPosition climbing over UI */
-            node.zPosition -= 1
-        }*/
-    
     }
     
     
@@ -245,7 +233,9 @@ class GameScene: SKScene {
         
         /* Add on top of last piece, default on first piece */
         let lastPosition = lastPiece?.position ?? sushiBasePiece.position
-        newPiece.position = lastPosition + CGPoint(x: 0, y: sushiPieceHeight)
+        newPiece.position.x = lastPosition.x
+        newPiece.position.y = lastPosition.y + sushiPieceHeight
+        // newPiece.position = lastPosition + CGPoint(x: 0, y: sushiPieceHeight)
         
         /* Increment Z to ensure it's on top of the last piece, default on first piece */
         let lastZPosition = lastPiece?.zPosition ?? sushiBasePiece.zPosition
@@ -270,14 +260,9 @@ class GameScene: SKScene {
             /* Need to access last piece properties */
             let lastPiece = sushiTower.last
             
-            print("Last Piece side: \(lastPiece?.side)")
-            
-    
-                
             /* Random Number Generator */
-            let rand = CGFloat.random(min: 0, max: 1.0)
-            
-            print(lastPiece?.side != Side.None)
+            // let rand = CGFloat.random(min: 0, max: 1.0)
+            let rand = CGFloat(arc4random_uniform(100)) / 100
             
             if lastPiece?.side != Side.None {
                 addTowerPiece(side: Side.None)
@@ -313,7 +298,7 @@ class GameScene: SKScene {
         character.run(SKAction.colorize(with: UIColor.red, colorBlendFactor: 1.0, duration: 0.50))
         
         // Change play button selection handler
-        playButton.selectedHandler = {
+        playButton.selectedHandler = { [unowned self] in
             /* Grab reference to our SpriteKit view */
             let skView = self.view as SKView!
             
@@ -345,7 +330,8 @@ class GameScene: SKScene {
     func moveTowerDown() {
         var n: CGFloat = 0
         for piece in sushiTower {
-            let y = (n * sushiPieceHeight) + firstPieceY + sushiPieceHeight
+            let o = state == .GameOver ? 0 : sushiPieceHeight
+            let y = (n * sushiPieceHeight) + firstPieceY + o // sushiPieceHeight
             piece.position.y -= (piece.position.y - y) * 0.5
             n += 1
         }
